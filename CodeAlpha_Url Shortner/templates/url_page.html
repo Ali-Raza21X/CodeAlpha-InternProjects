@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+
+        <div class="card shadow p-4 text-center" style="width: 650px;">
+
+            <h2 class="mb-4">URL Created Successfully 🎉</h2>
+
+            {% if message %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+                        {% endif %}
+         <div class="mb-3">
+            <h5>Short Code</h5>
+
+            <div class="alert alert-primary fs-4 fw-bold">
+                {{ url_display }}
+            </div>
+        </div>
+            <div class="mb-3">
+                <h5>Original URL</h5>
+                <p>{{ original_url }}</p>
+            </div>
+
+            <div class="d-flex justify-content-center gap-3 mt-4">
+
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    Back to Home
+                </a>
+
+                <a href="{{ url_for('all_urls') }}" class="btn btn-secondary">
+                    Display All URLs
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
