@@ -1,26 +1,82 @@
-# CodeAlpha-Projects
-Python internship projects completed during the CodeAlpha Internship Program, showcasing problem-solving, CLI application development, and core Python programming skills.
-This repository contains Python projects completed during my CodeAlpha Internship. These projects demonstrate my understanding of Python fundamentals, problem-solving, user input handling, loops, functions, conditional statements, and CLI application development.
+# CodeAlpha Internship Projects
+
+Python and Flask projects completed during the **CodeAlpha Internship Program**, showcasing backend development, database integration, authentication systems, and practical web application building.
+
+This repository contains my internship tasks and projects developed to strengthen my understanding of Python programming, Flask framework, database management, CRUD operations, routing, authentication, and project structuring.
 
 ## Projects
 
-### 1. Chatbot
-A simple command-line chatbot that responds to user queries using predefined responses.
+### 1. URL Shortener
 
-### 2. Hangman Game
-A word-guessing game where players try to reveal a hidden word before running out of lives.
+A Flask-based web application that converts long URLs into short, shareable links.
 
-### 3. Stock Portfolio Tracker
-A CLI application that calculates investment values based on stock prices and quantities entered by the user.
+**Features:**
+
+* Generate short URLs
+* Store URLs in database
+* Redirect using shortened links
+* View all generated URLs
+
+**Concepts Used:**
+
+* Flask Routing
+* SQLite Database
+* CRUD Operations
+* Template Rendering
+
+---
+
+### 2. Event Management System (EMS)
+
+A complete Flask-based event management platform where users can register, login, view events, and book events, while admins can manage event operations.
+
+**Features:**
+
+* User Authentication
+* Admin Dashboard
+* Event Creation & Management
+* Event Booking System
+* View Personal Bookings
+* Manage All Bookings
+
+**Concepts Used:**
+
+* Flask Authentication
+* Flask-SQLAlchemy
+* Flask-Login
+* Flask-WTF
+* CRUD Operations
+* Role-Based Access Control
+
+---
 
 ## Technologies Used
-- Python
-- Functions
-- Loops
-- Conditional Statements
-- Dictionaries
-- Lists
-- Random Module
+
+* Python
+* Flask
+* Flask-SQLAlchemy
+* Flask-Login
+* Flask-WTF
+* SQLite
+* HTML
+* CSS
+* Jinja2
+
+## Skills Demonstrated
+
+* Backend Development
+* Database Design
+* Authentication Systems
+* CRUD Functionality
+* Project Structuring
+* Problem Solving
+* Debugging
 
 ## Internship
-Completed as part of the CodeAlpha Python Programming Internship.
+
+Completed as part of the **CodeAlpha Python Development Internship**, where these projects were assigned to build practical experience in real-world application development.
+
+## Author
+
+**Ali Raza**
+ Backend Developer | Python & Flask Learner
