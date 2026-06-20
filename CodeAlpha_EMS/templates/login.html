@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+    <h2><i class="bi bi-box-arrow-in-right"></i> Login Page</h2>
+</div>
+
+<form action="/login" method="post" class="row justify-content-center">
+    {{ form.hidden_tag() }}
+
+    <div class="col-md-10">
+        {{form.email.label(class="form-label")}}
+        {{ form.email(class="form-control", placeholder="Enter your email") }}
+    </div>
+
+    <div class="col-md-10">
+        {{form.password.label(class="form-label")}}
+        {{ form.password(class="form-control", placeholder="Enter your password") }}
+    </div>
+
+    <div class="col-md-10 text-center">
+        {{form.submit(class="btn btn-primary btn-lg w-100")}}
+    </div>
+</form>
+
+<p class="text-center mt-3" style="color: #dc3545; font-weight: 600;">{{ message }}</p>
+
+{% endblock %}

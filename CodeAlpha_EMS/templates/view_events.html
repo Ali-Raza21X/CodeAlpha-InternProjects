@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+    <h2><i class="bi bi-calendar-week"></i> All Events</h2>
+</div>
+
+{% for event in events %}
+
+<div class="event-card">
+    <h3>{{ event.title }} <i class="bi bi-calendar-event"></i></h3>
+    <p><strong>Description:</strong> {{ event.description }}</p>
+    <p><strong>Location:</strong> <i class="bi bi-geo-alt"></i> {{ event.location }}</p>
+    <p><strong>Date:</strong> <i class="bi bi-calendar-day"></i> {{ event.date }}</p>
+    <p><strong>Capacity:</strong> {{ event.capacity }} | <strong>Booked:</strong> {{ event.bookings|length }}</p>
+
+    {% if event.bookings|length >= event.capacity %}
+        <p class="status-full"><i class="bi bi-x-circle"></i> Status: Full</p>
+    {% else %}
+        <p class="status-open"><i class="bi bi-check-circle"></i> Status: Open</p>
+    {% endif %}
+
+    <div class="actions">
+        {% if current_user.role == 'admin' %}
+            <a href="/edit-event/{{ event.id }}" class="btn btn-warning btn-sm">
+                <i class="bi bi-pencil"></i> Edit
+            </a>
+            <a href="/delete-event/{{ event.id }}" class="btn btn-danger btn-sm">
+                <i class="bi bi-trash"></i> Delete
+            </a>
+        {% endif %}
+
+        {% if event.bookings|length < event.capacity %}
+            <a href="/book/{{ event.id }}" class="btn btn-success btn-sm">
+                <i class="bi bi-bookmark"></i> Book Event
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+<hr>
+
+{% endfor %}
+
+{% endblock %}

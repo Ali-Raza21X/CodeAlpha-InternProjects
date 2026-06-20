@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+    <h2>Welcome {{ current_user.name }} <i class="bi bi-person-circle"></i></h2>
+    <p class="fs-5">Your role: <strong style="color: #667eea;">{{ current_user.role }}</strong></p>
+</div>
+
+<h3><i class="bi bi-lightning-charge"></i> Quick Actions</h3>
+
+<div class="action-card">
+    <a href="/events"><i class="bi bi-calendar-week"></i> Browse Events</a>
+</div>
+
+<div class="action-card">
+    <a href="/my-bookings"><i class="bi bi-bookmark"></i> My Bookings</a>
+</div>
+
+{% if current_user.role == 'admin' %}
+    <div class="admin-section">
+        <h3><i class="bi bi-shield-check"></i> Admin Controls</h3>
+
+        <a href="/create_event" class="btn btn-warning btn-lg">
+            <i class="bi bi-plus-circle"></i> Create Event
+        </a>
+
+        <a href="/all-bookings" class="btn btn-info btn-lg">
+            <i class="bi bi-list-ul"></i> View All Bookings
+        </a>
+    </div>
+{% endif %}
+
+{% endblock %}
